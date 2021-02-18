@@ -1,0 +1,158 @@
+.container {
+  border-radius: 10px;
+  margin: 200px 100px 100px;
+  width: 900px;
+  height: 900px;
+  background-image: url("images/sky.png");
+  background-repeat: no-repeat;
+  background-size: 1000px;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+  padding-top: 10px;
+  padding-right: 30px;
+  font-size: 80px;
+  margin-right: 0;
+  color: #fde056;
+  font-family: "Open Sans", sans-serif;
+}
+
+.searching {
+  padding-top: 30px;
+  padding-left: 10px;
+  background: transparent;
+  margin: 20px 10px;
+}
+
+#submit-button {
+  background: transparent;
+  border-style: none;
+}
+
+.search-icon {
+  width: 45px;
+  background: transparent;
+}
+
+#current-location-button {
+  background: transparent;
+  border-style: none;
+}
+
+.location-icon {
+  width: 40px;
+  background: transparent;
+}
+
+.navigation-bar a {
+  font-size: 15px;
+  text-decoration: none;
+  color: #fde056;
+}
+
+.navigation-bar a:hover {
+  font-weight: bold;
+}
+
+.container-main-details {
+  margin-top: 40px;
+  border-width: 50%;
+  padding: 10px;
+  border: 2px;
+  border-radius: 40px;
+  background: white;
+  display: inline-block;
+  width: 300px;
+  height: 400px;
+  color: #2b8c97;
+}
+
+h2 {
+  text-align: center;
+}
+
+h6 {
+  text-align: center;
+  font-size: 16px;
+}
+
+#left-column {
+  float: left;
+  width: 50%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.col-main-degree {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+#celsius #fahrenheit {
+  text-align: left;
+}
+
+#right-column {
+  float: right;
+  width: 50%;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.cloudyimage {
+  width: 90px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  line-height: 40px;
+  margin-top: 150px;
+  padding-left: 20px;
+  font-size: 20px;
+  display: block;
+}
+
+#right-column-week {
+  float: right;
+}
+
+.weekly-metrics {
+  margin-top: 20px;
+  padding-left: 40px;
+  width: 500px;
+  height: 400px;
+  background: white;
+  border-radius: 30px;
+}
+
+.row {
+  font-size: 20px;
+  color: #2b8c97;
+  margin-top: 10px;
+}
+
+.col-day {
+  margin-top: 10px;
+  width: 30%;
+}
+
+.col-high {
+  margin-top: 10px;
+  width: 20%;
+}
+
+.col-low {
+  margin-top: 10px;
+  width: 20%;
+}
+
+.col-img {
+  margin-top: 10px;
+  width: 20%;
+}
+
+#table-image {
+  width: 40px;
+}

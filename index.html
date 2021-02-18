@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="src/style.css" />
+
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="clearfix">
+            <div style="float: right;">
+                <h1>WEATHER</h1>
+            </div>
+
+            <nav class="searching">
+                <form class="form-inline" id="search-bar">
+                    <input class="form-control mr-sm-2" type="text" id="location-search" placeholder="Search for a city"
+                        aria-label="Location" />
+                    </input>
+
+                    <button class="submit" type="submit" id="submit-button">
+                        <image class=search-icon src="images/searchicon.png">
+                    </button>
+
+                    <button class="current-location" type="click" id="current-location-button">
+                        <image class=location-icon src="images/locationicon.png">
+                    </button>
+                </form>
+            </nav>
+
+
+
+
+
+            <div class="navigation-bar">
+                <div class="column">
+
+                    <span class="col">
+                        <a href="http://www.bom.gov.au/nsw/forecasts/sydney.shtml" target="_blank">Sydney</a></span>
+                    |
+                    <span class="col">
+                        <a href="http://www.bom.gov.au/vic/forecasts/melbourne.shtml"
+                            target="_blank">Melbourne</a></span>
+                    |
+                    <span class="col">
+                        <a href="http://www.bom.gov.au/wa/forecasts/perth.shtml" target="_blank">Perth</a></span>
+                    |
+                    <span class="col">
+                        <a href="http://www.bom.gov.au/tas/forecasts/hobart.shtml" target="_blank">Hobart</a></span>
+                    |
+                    <span class="col">
+                        <a href="http://www.bom.gov.au/nt/forecasts/darwin.shtml" target="_blank">Darwin</a></span>
+                    |
+
+                </div>
+            </div>
+
+            <div class="container-main-details" id="left-column-main">
+                <h2 id="city"> </h2>
+                <h6 id="date"> </h6>
+
+                <div id="left-column">
+                    <span class="col-main-degree" id="temperature"> </span>
+                    <br> <span class="metric-selection">
+                        <a href="#" id="celsius"> C </a> | <a href="#" id="fahrenheit"> F </a></span>
+                </div>
+
+                <div id="right-column">
+                    <div class="col-main-img">
+                        <img class="cloudyimage" src="images/cloudy2.png" alt="cloudy" />
+                    </div>
+                </div>
+
+                <div class="column-metrics">
+                    <br>
+                    <ul>
+                        <li id="weather-type"> </li>
+                        <li id="humidity"> %</li>
+                        <li id="wind-speed"> km/h</li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+            <div class="container-weekly" id="right-column-week">
+                <div class="weekly-metrics">
+
+                    <div class="row">
+                        <div class="col-day">
+                            Tuesday
+                        </div>
+
+                        <div class="col-high">
+                            24°
+                        </div>
+
+                        <div class="col-low">
+                            14°
+                        </div>
+
+                        <div class="col-img">
+                            <img src="images/sunny.png" id="table-image" alt="sunny" />
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-day">
+                            Wednesday
+                        </div>
+
+                        <div class="col-high">
+                            28°
+                        </div>
+
+                        <div class="col-low">
+                            19°
+                        </div>
+
+                        <div class="col-img">
+                            <img src="images/sunny.png" id="table-image" alt="sunny" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-day">
+                            Thursday
+                        </div>
+
+                        <div class="col-high">
+                            29°
+                        </div>
+
+                        <div class="col-low">
+                            18°
+                        </div>
+
+                        <div class="col-img">
+                            <img src="images/sunny.png" id="table-image" alt="sunny" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-day">
+                            Friday
+                        </div>
+
+                        <div class="col-high">
+                            20°
+                        </div>
+
+                        <div class="col-low">
+                            16°
+                        </div>
+
+                        <div class="col-img">
+                            <img src="images/rainy2.png" id="table-image" alt="rain" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-day">
+                            Saturday
+                        </div>
+
+                        <div class="col-high">
+                            23°
+                        </div>
+
+                        <div class="col-low">
+                            17°
+                        </div>
+
+                        <div class="col-img">
+                            <img src="images/rainy2.png" id="table-image" alt="cloud" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-day">
+                            Sunday
+                        </div>
+
+                        <div class="col-high">
+                            24°
+                        </div>
+
+                        <div class="col-low">
+                            18°
+                        </div>
+
+                        <div class="col-img">
+                            <img src="images/sunny.png" id="table-image" alt="sunny" />
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <br>
+        <footer>
+            <strong> Coded by Shanese Mattiske </strong>
+        </footer>
+    </div>
+    </div>
+    </div>
+
+    <script src="src/index.js"></script>
+
+</body>
+
+</html>
