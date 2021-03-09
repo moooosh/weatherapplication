@@ -52,6 +52,7 @@ function displayTemperature(response) {
 
 function search(city) {
   let apiKey = "4594a157e6721a9920f32ed09fef95d6";
+  let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
 }
@@ -65,22 +66,25 @@ function handleSubmit(event) {
 let searchBar = document.querySelector("#search-bar");
 searchBar.addEventListener("submit", handleSubmit);
 
-function currentPositionSearch(position) {
+function cityLocation(position) {
+  let lat = position.coords.latitude;
+  let long = position.coords.longitude;
   let apiKey = "4594a157e6721a9920f32ed09fef95d6";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=${units}&appid=${apiKey}`;
 
   axios.get(apiUrl).then(displayTemperature);
 }
 
 function handleLocation(event) {
   event.preventDefault();
-  navigator.geolocation.getCurrentPosition(currentPositionSearch);
+  navigator.geolocation.getCurrentPosition(cityLocation);
 }
 
 let currentLocationButton = document.querySelector("#current-location-button");
-currentLocationButton.addEventListener("click", displayTemperature);
+currentLocationButton.addEventListener("click", handleLocation);
 
-search("Brisbane");
+search("Darwin");
 
 function convertToFahrenheit(event) {
   event.preventDefault();
