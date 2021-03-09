@@ -34,7 +34,6 @@ let month = months[now.getMonth(months)];
 h6.innerHTML = `${day} ${date} ${month} ${year}`;
 
 function displayTemperature(response) {
-  debugger;
   let cityName = response.data.name;
   document.querySelector("#city").innerHTML = `${cityName}`;
 
