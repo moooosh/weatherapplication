@@ -1,11 +1,10 @@
 .container {
   border-radius: 10px;
-  margin: 200px 100px 100px;
+  margin: 100px 200px;
   width: 900px;
   height: 900px;
-  background-image: url("images/sky.png");
-  background-repeat: no-repeat;
-  background-size: 1000px;
+  background-image: url("../images/sky.png");
+  background-size: contain;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -62,6 +61,11 @@ h1 {
   border: 2px;
   border-radius: 40px;
   background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
   display: inline-block;
   width: 300px;
   height: 400px;
@@ -124,6 +128,11 @@ ul {
   width: 500px;
   height: 400px;
   background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
   border-radius: 30px;
 }
 
