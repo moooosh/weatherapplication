@@ -6,29 +6,26 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="src/style.css" />
-
-
 
 </head>
 
 <body>
     <div class="container">
         <div class="clearfix">
+            
             <div style="float: right;">
                 <h1>WEATHER</h1>
             </div>
 
-            <nav class="searching">
                 <form class="form-inline" id="search-bar">
-                    <input class="form-control mr-sm-2" type="text" id="location-search" placeholder="Search for a city"
+                    <input class="form-control mr-sm-4" type="text" id="location-search" placeholder="Search for a city"
                         aria-label="Location" />
                     </input>
 
@@ -40,38 +37,12 @@
                         <image class=location-icon src="images/locationicon.png">
                     </button>
                 </form>
-            </nav>
-
-
-
-
-
-            <div class="navigation-bar">
-                <div class="column">
-
-                    <span class="col">
-                        <a href="http://www.bom.gov.au/nsw/forecasts/sydney.shtml" target="_blank">Sydney</a></span>
-                    |
-                    <span class="col">
-                        <a href="http://www.bom.gov.au/vic/forecasts/melbourne.shtml"
-                            target="_blank">Melbourne</a></span>
-                    |
-                    <span class="col">
-                        <a href="http://www.bom.gov.au/wa/forecasts/perth.shtml" target="_blank">Perth</a></span>
-                    |
-                    <span class="col">
-                        <a href="http://www.bom.gov.au/tas/forecasts/hobart.shtml" target="_blank">Hobart</a></span>
-                    |
-                    <span class="col">
-                        <a href="http://www.bom.gov.au/nt/forecasts/darwin.shtml" target="_blank">Darwin</a></span>
-                    |
-
-                </div>
-            </div>
+    
 
             <div class="container-main-details" id="left-column-main">
                 <h2 id="city"> </h2>
                 <h6 id="date"> </h6>
+                <h7 id = "time"></h7>
 
                 <div id="left-column">
                     <span class="col-main-degree" id="temperature"> </span>
@@ -80,9 +51,7 @@
                 </div>
 
                 <div id="right-column">
-                    <div class="col-main-img">
-                        <img class="cloudyimage" src="images/cloudy2.png" alt="cloudy" />
-                    </div>
+                <img src="" id="main-icon" alt=""/>
                 </div>
 
                 <div class="column-metrics">
