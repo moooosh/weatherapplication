@@ -65,15 +65,13 @@ h1 {
   margin-left: 20px;
   border-width: 50%;
   padding: 20px;
-  border: 2px;
   border-radius: 40px;
-  background: white;
   background: linear-gradient(
     to right bottom,
     rgba(255, 255, 255, 0.7),
     rgba(255, 255, 255, 0.3)
   );
-  display: inline-block;
+  
   width: 300px;
   height: 220px;
   color: black;
@@ -81,6 +79,7 @@ h1 {
 
 h2 {
   text-align: center;
+  font-weight: bolder;
 }
 
 h6,
@@ -111,6 +110,7 @@ h6,
 }
 
 #main-icon {
+  padding-top: 15px;
   width: 90px;
   margin-bottom: 20px;
 }
@@ -119,23 +119,25 @@ h6,
   margin-top: 20px;
   margin-left: 20px;
   border-width: 50%;
-  padding: 10px;
-  border: 2px;
   border-radius: 40px;
-  background: white;
   background: linear-gradient(
     to right bottom,
     rgba(255, 255, 255, 0.7),
     rgba(255, 255, 255, 0.3)
   );
-  display: inline-block;
   width: 300px;
-  height: 150px;
+  height: 130px;
+  line-height: 30px;
 }
 
 ul {
+  padding-top: 20px;
   list-style: none;
   font-size: 20px;
+}
+
+#weather-type {
+  text-transform: capitalize;
 }
 
 #right-column-week {
@@ -146,7 +148,6 @@ ul {
   padding-left: 40px;
   width: 500px;
   height: 400px;
-  background: white;
   background: linear-gradient(
     to right bottom,
     rgba(255, 255, 255, 0.7),
