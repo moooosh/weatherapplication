@@ -100,10 +100,6 @@ h6,
   font-weight: bold;
 }
 
-#celsius #fahrenheit {
-  text-align: left;
-}
-
 #right-column {
   float: right;
   width: 50%;
@@ -111,7 +107,6 @@ h6,
 }
 
 #main-icon {
-  padding-top: 15px;
   width: 90px;
   margin-bottom: 20px;
 }
@@ -130,7 +125,7 @@ h6,
   height: 130px;
   line-height: 30px;
   display: inline-table;
-  color: #2b8c97;;
+  color: #2b8c97;
 }
 
 ul {

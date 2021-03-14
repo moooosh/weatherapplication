@@ -38,9 +38,10 @@ function displayTemperature(response) {
   let city = response.data.name;
   document.querySelector("#city").innerHTML = `${city}`;
 
-
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  let temperature = Math.round(celsiusTemperature);
   document.querySelector("#temperature").innerHTML = `${temperature}°`;
+  
 
   let humidity = response.data.main.humidity;
   document.querySelector("#humidity").innerHTML = `Humidity ${humidity}%`;
@@ -58,6 +59,8 @@ let iconSelection = response.data.weather[0].icon;
     `https://openweathermap.org/img/wn/${iconSelection}@2x.png`);
 
     iconElement.setAttribute ("alt", response.data.weather[0].description);
+
+    
 }
 
 function search(city) {
@@ -98,24 +101,20 @@ currentLocationButton.addEventListener("click", handleLocation);
 
 
 
-
-
-
-
-
-
-
-
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 75;
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
 }
+let celsiusTemperature = null;
+
+
 
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 24;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let fahrenheitSelection = document.querySelector("#fahrenheit");
