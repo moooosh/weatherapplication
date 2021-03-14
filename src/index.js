@@ -35,8 +35,9 @@ h6.innerHTML = `${day} ${date} ${month} ${year}`;
 
 function displayTemperature(response) {
   
-  let cityName = response.data.name;
-  document.querySelector("#city").innerHTML = `${cityName}`;
+  let city = response.data.name;
+  document.querySelector("#city").innerHTML = `${city}`;
+
 
   let temperature = Math.round(response.data.main.temp);
   document.querySelector("#temperature").innerHTML = `${temperature}°`;
@@ -50,7 +51,7 @@ function displayTemperature(response) {
   let windSpeed = Math.round(response.data.wind.speed);
   document.querySelector("#wind-speed").innerHTML = `Wind ${windSpeed}km/h`;
 
-  let iconElement = document.querySelector = ("#main-icon");
+  let iconElement = document.querySelector("#main-icon");
 let iconSelection = response.data.weather[0].icon;
   iconElement.setAttribute(
     "src", 
@@ -70,11 +71,11 @@ search("Brisbane");
 
 function handleSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector("#location-search").value;
-  search(city);
+  let cityElement = document.querySelector("#location-search");
+  search(cityElement.value);
 }
 
-let searchBar = document.querySelector("#submit-button");
+let searchBar = document.querySelector("#search-bar");
 searchBar.addEventListener("submit", handleSubmit);
 
 function cityLocation(position) {

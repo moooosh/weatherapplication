@@ -74,7 +74,7 @@ h1 {
   );
   width: 300px;
   height: 220px;
-  color: black;
+  color: #2b8c97;
   display: inline-table;
 }
 
@@ -130,6 +130,7 @@ h6,
   height: 130px;
   line-height: 30px;
   display: inline-table;
+  color: #2b8c97;;
 }
 
 ul {
