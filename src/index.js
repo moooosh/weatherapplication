@@ -50,7 +50,7 @@ function displayTemperature(response) {
   let windSpeed = Math.round(response.data.wind.speed);
   document.querySelector("#wind-speed").innerHTML = `Wind ${windSpeed}km/h`;
 
-let iconElement = document.querySelector = ("#main-icon");
+  let iconElement = document.querySelector = ("#main-icon");
 let iconSelection = response.data.weather[0].icon;
   iconElement.setAttribute(
     "src", 
@@ -74,7 +74,7 @@ function handleSubmit(event) {
   search(city);
 }
 
-let searchBar = document.querySelector("#search-bar");
+let searchBar = document.querySelector("#submit-button");
 searchBar.addEventListener("submit", handleSubmit);
 
 function cityLocation(position) {
@@ -94,6 +94,14 @@ function handleLocation(event) {
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", handleLocation);
+
+
+
+
+
+
+
+
 
 
 

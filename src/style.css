@@ -2,29 +2,42 @@
   border-radius: 10px;
   margin: 100px 200px;
   width: 900px;
-  height: 700px;
+  height: 570px;
   background-image: url("../images/sky.png");
   background-size: contain;
   font-family: "Open Sans", sans-serif;
 }
 
+.clearfix {
+  height: 570px;
+}
+
 h1 {
-  padding-top: 10px;
-  padding-right: 30px;
+  padding-top: 20px;
+  padding-right: 20px;
   font-size: 80px;
-  margin-right: 0;
   color: #fde056;
   font-family: "Open Sans", sans-serif;
 }
 
-.form-inline,
 #search-bar {
   padding-top: 30px;
   padding-left: 10px;
 }
 
 #location-search {
-  margin-right: 0 auto;
+  width: 300px;
+  height: 35px;
+  color: #2b8c97;
+  border-radius: 10px;
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-style: none;
+  padding-left: 10px;
 }
 
 #submit-button {
@@ -49,8 +62,9 @@ h1 {
 
 .container-main-details {
   margin-top: 40px;
+  margin-left: 20px;
   border-width: 50%;
-  padding: 10px;
+  padding: 20px;
   border: 2px;
   border-radius: 40px;
   background: white;
@@ -61,15 +75,16 @@ h1 {
   );
   display: inline-block;
   width: 300px;
-  height: 400px;
-  color: #2b8c97;
+  height: 220px;
+  color: black;
 }
 
 h2 {
   text-align: center;
 }
 
-h6 {
+h6,
+#date {
   text-align: center;
   font-size: 16px;
 }
@@ -78,7 +93,6 @@ h6 {
   float: left;
   width: 50%;
   text-align: center;
-  margin-top: 30px;
 }
 
 .col-main-degree {
@@ -93,7 +107,6 @@ h6 {
 #right-column {
   float: right;
   width: 50%;
-  margin-top: 30px;
   text-align: center;
 }
 
@@ -102,13 +115,27 @@ h6 {
   margin-bottom: 20px;
 }
 
+.column-metrics {
+  margin-top: 20px;
+  margin-left: 20px;
+  border-width: 50%;
+  padding: 10px;
+  border: 2px;
+  border-radius: 40px;
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  display: inline-block;
+  width: 300px;
+  height: 150px;
+}
+
 ul {
   list-style: none;
-  line-height: 40px;
-  margin-top: 150px;
-  padding-left: 20px;
   font-size: 20px;
-  display: block;
 }
 
 #right-column-week {
@@ -116,7 +143,6 @@ ul {
 }
 
 .weekly-metrics {
-  margin-top: 20px;
   padding-left: 40px;
   width: 500px;
   height: 400px;
