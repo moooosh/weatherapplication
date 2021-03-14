@@ -44,7 +44,7 @@ function displayTemperature(response) {
   let humidity = response.data.main.humidity;
   document.querySelector("#humidity").innerHTML = `Humidity ${humidity}%`;
 
-  let weatherType = response.data.weather[0].main;
+  let weatherType = response.data.weather[0].description;
   document.querySelector("#weather-type").innerHTML = `${weatherType}`;
 
   let windSpeed = Math.round(response.data.wind.speed);
