@@ -19,6 +19,7 @@ h1, #header {
   text-align: center;
 }
 
+
 #location-search {
   margin-left: 83.500px;
   margin-right: 0px;
@@ -34,6 +35,19 @@ h1, #header {
 border: none;
 border-radius: 25px;
 }
+
+#location-search:hover:before {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #d35400;
+  filter: blur(3px);
+}
+
+#location-search:hover {
+  color: #ffa502;
+  box-shadow: 0 0 15px #d35400;
+  text-shadow: 0 0 15px #d35400;
+}
+
 
 .search-icon, #submit-button {
 background: transparent;
@@ -65,6 +79,18 @@ margin-left: 0px;
   height: 180px;
   color:  #ffe056;
   font-family: 'Josefin Slab';
+}
+
+.container-main-details:hover:before {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #d35400;
+  filter: blur(3px);
+}
+
+.container-main-details:hover {
+  color: #ffa502;
+  box-shadow: 0 0 15px #d35400;
+  text-shadow: 0 0 15px #d35400;
 }
 
 h2 {
@@ -100,6 +126,19 @@ h6,
     rgba(163, 90, 173, 0.3)
   );
 }
+
+.container-degree:hover:before {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #d35400;
+  filter: blur(3px);
+}
+
+.container-degree:hover {
+  color: #ffa502;
+  box-shadow: 0 0 15px #d35400;
+  text-shadow: 0 0 15px #d35400;
+}
+
 
 .my-row {
   width: 250px;
@@ -146,6 +185,18 @@ ul {
     rgba(44, 36, 77, 0.7),
     rgba(163, 90, 173, 0.3)
   );
+}
+
+.container-sun:hover:before {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #d35400;
+  filter: blur(3px);
+}
+
+.container-sun:hover {
+  color: #ffa502;
+  box-shadow: 0 0 15px #d35400;
+  text-shadow: 0 0 15px #d35400;
 }
 
 h1, #sun {
