@@ -8,6 +8,10 @@
   color: #ffe056;
 }
 
+.clearfix {
+  height: 900px;
+}
+
 h1, #header {
   color: #ffe056;
   font-size: 80px;
@@ -89,52 +93,63 @@ h6,
   margin-right: auto;
   text-align: center;
   width: 300px;
-  
-}
-
-.container-degree, #temperature {
-  font-size: 60px;
-  font-weight: bold;
-  font-family: 'Josefin Slab';
-}
-
-.container-degree, #metric-selection {
-  font-size: 20px;
-  padding-left: 20px;
-}
-
-.column-metrics {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  margin-bottom: 20px;
   border-radius: 40px;
   background: linear-gradient(
     to right bottom,
     rgba(44, 36, 77, 0.7),
     rgba(163, 90, 173, 0.3)
   );
-  width: 300px;
-  line-height: 30px;
+}
+
+.my-row {
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px;
+}
+
+#temperature.col-4 {
+  font-size: 60px;
+  padding: 0px;
+  font-weight: bold;
+  font-family: 'Josefin Slab';
+}
+
+#icon.col-4 {
+  padding: 0px;
+}
+
+
+#column-metrics.row.my-row {
+  margin-top: 10px;
+  width: 250px;
   color:  #ffe056;
 }
 
 ul {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  text-align: center;
   list-style: none;
   font-size: 20px;
+  line-height: 30px;
 }
 
 .container-sun {
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   font-size: 20px;
-  width: 300px;
+  width: 370px;
+  border-radius: 40px;
+  background: linear-gradient(
+    to right bottom,
+    rgba(44, 36, 77, 0.7),
+    rgba(163, 90, 173, 0.3)
+  );
 }
 
 h1, #sun {
+  margin-top: 10px;
   text-align: center;
   font-size: 30px;
 }
