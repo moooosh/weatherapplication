@@ -1,8 +1,11 @@
 let now = new Date();
 
 let h6 = document.querySelector("h6");
+let timeElement = document.querySelector("#current-time");
 
 let date = now.getDate();
+let minutes = now.getMinutes();
+let hours = now.getHours();
 let year = now.getFullYear();
 let days = [
   "Sunday",
@@ -31,9 +34,13 @@ let months = [
 ];
 let month = months[now.getMonth(months)];
 
-h6.innerHTML = `${day} ${date} ${month} ${year}`;
+
+h6.innerHTML = `${day} <br> ${date} ${month} ${year}`;
+timeElement.innerHTML = `${hours}:${minutes}`
+
 
 function displayTemperature(response) {
+  console.log(response.data);
   
   let city = response.data.name;
   document.querySelector("#city").innerHTML = `${city}`;
@@ -60,14 +67,30 @@ let iconSelection = response.data.weather[0].icon;
 
     iconElement.setAttribute ("alt", response.data.weather[0].description);
 
-    
-}
+
+
+let morningElement = Math.round(response.data.sys.temp.morn);
+document.querySelector("#temperature-morning").innerHTML = `${morningElement}`;
+
+let afternoonElement = Math.round(response.data.sys.temp.eve);
+document.querySelector("#temperature-noon").innerHTML = `${afternoonElement}`;
+
+let eveningElement = Math.round(response.data.sys.temp.night);
+document.querySelector("#temperature-eve").innerHTML = `${eveningElement}`;
+  }
+
+  function displayForecast(response) {
+    console.log(response.data);
+  }
 
 function search(city) {
   let apiKey = "4594a157e6721a9920f32ed09fef95d6";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayTemperature);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast)
 }
 
 search("Brisbane");
@@ -89,6 +112,8 @@ function cityLocation(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=${units}&appid=${apiKey}`;
 
   axios.get(apiUrl).then(displayTemperature);
+
+
 }
 
 function handleLocation(event) {
@@ -98,7 +123,6 @@ function handleLocation(event) {
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", handleLocation);
-
 
 
 function convertToFahrenheit(event) {
@@ -122,3 +146,31 @@ fahrenheitSelection.addEventListener("click", convertToFahrenheit);
 
 let celsiusSelection = document.querySelector("#celsius");
 celsiusSelection.addEventListener("click", convertToCelsius);
+
+
+function convertUnixTimestamp(event) {
+  event.preventDefault();
+  let unixTimestamp = response.data.sys.sunrise;
+  let milliseconds = (unixTimestamp * 1000);
+  let dateObject = new Date(milliseconds);
+  let dateFormat = dateObject.toLocaleString()
+
+  let sunriseElement = dateObject.toLocaleString[4];
+  document.querySelector("sunrise-time").innerHTML=`${sunriseElement}`
+ 
+}
+ 
+ 
+ 
+  //let sunriseElement = (unixTimestamp)
+  //document.querySelector("#sunrise-time").innerHTML = `${sunriseElement}`;
+
+
+
+
+
+//let sunsetElement = response.data.sys.sunset;
+//document.querySelector("#sunset-time").innerHTML = `${sunsetElement}`;
+
+
+
