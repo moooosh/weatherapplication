@@ -1,46 +1,72 @@
-let now = new Date();
+function formatDate(timestamp) {
+  
+  let now = new Date(timestamp);
+  
+  let date = now.getDate();
 
-let h6 = document.querySelector("h6");
-let timeElement = document.querySelector("#current-time");
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+  let day = days[now.getDay()];
 
-let date = now.getDate();
-let minutes = now.getMinutes();
-let hours = now.getHours();
-let year = now.getFullYear();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday"
-];
-let day = days[now.getDay(days)];
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+  let month = months[now.getMonth()];
+  return `${day} <br> ${date} ${month}`;
+  }
 
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December"
-];
-let month = months[now.getMonth(months)];
+  
+  function formatTime(timestamp) {
+    let date = new Date(timestamp);
+    let hours = date.getHours();
+    if (hours < 10) {
+      hours = `0${hours}`
+    }
+    let minutes = date.getMinutes();
+    if (minutes < 10) {
+      minutes = `0${minutes}`
+   }  return `${hours}:${minutes}`
+  }
 
-
-h6.innerHTML = `${day} <br> ${date} ${month} ${year}`;
-timeElement.innerHTML = `${hours}:${minutes}`
+   function formatSun(timestamp) {
+     let date = new Date(timestamp);
+     let hours = date.getHours();
+    if (hours < 10) {
+      hours = `0${hours}`
+    }
+    let minutes = date.getMinutes();
+    if (minutes < 10) {
+      minutes = `0${minutes}`
+   }  return `${hours}:${minutes}`
+  }
 
 
 function displayTemperature(response) {
   console.log(response.data);
+
+  let date = document.querySelector("h6")
+  date.innerHTML = formatDate(response.data.dt * 1000);
+
+  let time = document.querySelector("#current-time")
+  time.innerHTML = formatTime(response.data.dt * 1000);
   
   let city = response.data.name;
   document.querySelector("#city").innerHTML = `${city}`;
@@ -67,6 +93,11 @@ let iconSelection = response.data.weather[0].icon;
 
     iconElement.setAttribute ("alt", response.data.weather[0].description);
 
+let sunElement = document.querySelector("#sunrise-time")
+sunElement.innerHTML = formatSun(response.data.sys.sunrise * 1000);
+
+let sunsetElement = document.querySelector("#sunset-time");
+sunsetElement.innerHTML = formatSun(response.data.sys.sunset * 1000);
 
 
 let morningElement = Math.round(response.data.sys.temp.morn);
@@ -148,29 +179,10 @@ let celsiusSelection = document.querySelector("#celsius");
 celsiusSelection.addEventListener("click", convertToCelsius);
 
 
-function convertUnixTimestamp(event) {
-  event.preventDefault();
-  let unixTimestamp = response.data.sys.sunrise;
-  let milliseconds = (unixTimestamp * 1000);
-  let dateObject = new Date(milliseconds);
-  let dateFormat = dateObject.toLocaleString()
-
-  let sunriseElement = dateObject.toLocaleString[4];
-  document.querySelector("sunrise-time").innerHTML=`${sunriseElement}`
- 
-}
- 
- 
- 
-  //let sunriseElement = (unixTimestamp)
-  //document.querySelector("#sunrise-time").innerHTML = `${sunriseElement}`;
 
 
 
 
-
-//let sunsetElement = response.data.sys.sunset;
-//document.querySelector("#sunset-time").innerHTML = `${sunsetElement}`;
 
 
 
