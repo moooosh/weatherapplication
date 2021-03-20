@@ -1,5 +1,5 @@
+
 function formatDate(timestamp) {
-  
   let now = new Date(timestamp);
   
   let date = now.getDate();
@@ -30,9 +30,10 @@ function formatDate(timestamp) {
     "December"
   ];
   let month = months[now.getMonth()];
-  return `${day} <br> ${date} ${month}`;
-  }
 
+ 
+  return `${day} <br> ${date} ${month} `;
+  }
   
   function formatTime(timestamp) {
     let date = new Date(timestamp);
@@ -60,7 +61,6 @@ function formatDate(timestamp) {
 
 
 function displayTemperature(response) {
-  console.log(response.data);
 
   let date = document.querySelector("h6")
   date.innerHTML = formatDate(response.data.dt * 1000);
@@ -99,29 +99,25 @@ sunElement.innerHTML = formatSun(response.data.sys.sunrise * 1000);
 let sunsetElement = document.querySelector("#sunset-time");
 sunsetElement.innerHTML = formatSun(response.data.sys.sunset * 1000);
 
-
-let morningElement = Math.round(response.data.sys.temp.morn);
-document.querySelector("#temperature-morning").innerHTML = `${morningElement}`;
-
-let afternoonElement = Math.round(response.data.sys.temp.eve);
-document.querySelector("#temperature-noon").innerHTML = `${afternoonElement}`;
-
-let eveningElement = Math.round(response.data.sys.temp.night);
-document.querySelector("#temperature-eve").innerHTML = `${eveningElement}`;
   }
 
   function displayForecast(response) {
-    console.log(response.data);
+    let morningElement = Math.round(response.data.daily.temp.morn);
+  document.querySelector("#temperature-morning").innerHTML = `${morningElement}`;
+
+  let afternoonElement = Math.round(response.data.daily.temp.eve);
+  document.querySelector("#temperature-noon").innerHTML = `${afternoonElement}`;
+
+  let eveningElement = Math.round(response.data.daily.temp.night);
+  document.querySelector("#temperature-eve").innerHTML = `${eveningElement}`;
   }
+
 
 function search(city) {
   let apiKey = "4594a157e6721a9920f32ed09fef95d6";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayTemperature);
-
-  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
-  axios.get(apiUrl).then(displayForecast)
 }
 
 search("Brisbane");
@@ -144,7 +140,8 @@ function cityLocation(position) {
 
   axios.get(apiUrl).then(displayTemperature);
 
-
+  apiUrl = `https://api.openweathermap.org/data/2.5//onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast)
 }
 
 function handleLocation(event) {
