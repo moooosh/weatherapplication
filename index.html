@@ -10,7 +10,7 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Syne+Mono&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="src/style.css" />
 
@@ -20,7 +20,7 @@
     <div class="container">
         <div class="clearfix">
             
-    <h1 id="header">WEATHER</h1>
+    <h1 id="header">Weather</h1>
 
                 <form id="search-bar" class="form-inline">
                     <input class="form-control" type="search" id="location-search" placeholder="Search for a city"
@@ -60,6 +60,16 @@
                             <img src="" id="main-icon" alt=""/>
                         </div></div>
                      
+                        <div class="row my-row justify-content-around" id="conversion">
+                            <div class="col-6">
+                            <a href="#" id="celsius" class="active">Celsius</a>
+                            </div>
+
+                            <div class="col-6">
+                            <a href="#" id="fahrenheit">Fahrenheit</a>
+                            </div></div>
+
+                        
                       
                             <div class="column-metrics">
                                 <div class="row my-row">
@@ -69,18 +79,20 @@
                                     <li id="wind-speed">km/h</li>
                                 </ul>
                
+
+      
                
                         </div></div></div>
 
             <div class="container-sun">
                 <div class="row justify-content-around">
                     <div class="col-6">
-               <h1 id="sun"> SUNRISE </h1>
+               <h2 id="sun"> Sunrise </h1>
                 <img src="images/Sunriselarge.png" alt="sunrise">
                 <h5 id="sunrise-time">.</h5>
                     </div>
                     <div class="col-6">
-                        <h1 id="sun"> SUNSET </h1>
+                        <h2 id="sun"> SUNSET </h1>
                         <img src="images/Sunsetlarge.png" alt="sunset">
                         <h5 id="sunset-time">.</h5>
                     </div>
@@ -88,28 +100,6 @@
                 
                 </div>
 
-            <div class="container-time">
-<div class="row justify-content-around my-row">
-    <div class="col-4 my-col-1">
-    MORNING 
-<h5 id="temperature-morning">24° </h5>
-
-</div>
-<div class="col-4 my-col-2">
-    NOON
-    <h5 id="temperature-noon">28° </h5>
-</div>
-<div class="col-4 my-col-3">
-    EVENING
-    <h5 id="temperature-eve">18° </h5>
-</div>
-
-
-
-
-</div>
-
-            </div>
         
             <footer>
                 <br>

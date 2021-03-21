@@ -118,6 +118,8 @@ function search(city) {
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayTemperature);
+
+ 
 }
 
 search("Brisbane");
@@ -156,6 +158,8 @@ currentLocationButton.addEventListener("click", handleLocation);
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
+  celsiusSelection.classList.remove("active");
+  fahrenheitSelection.classList.add("active");
   let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemp);
 }
@@ -164,9 +168,11 @@ let celsiusTemperature = null;
 
 
 function convertToCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+ event.preventDefault();
+ celsiusSelection.classList.add("active");
+  fahrenheitSelection.classList.remove("active");
+let temperatureElement = document.querySelector("#temperature");
+ temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let fahrenheitSelection = document.querySelector("#fahrenheit");
