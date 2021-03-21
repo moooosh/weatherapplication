@@ -2,7 +2,7 @@
   border-radius: 10px;
   width: 500px;
   height: 1000px;
-  background-image: url("../images/sky.png");
+  background-image: url("../images/sky2.png");
   background-size: cover;
   background-repeat: no-repeat;
   font-family: 'Syne Mono', monospace;
@@ -17,7 +17,7 @@ h1, #header {
   color: #fde056;
   font-size: 80px;
   text-align: center;
-  padding-top: 20px;
+  padding-top: 30px;
 }
 
 
